@@ -5,8 +5,11 @@ import sound.MidiSynth;
 import java.awt.*;
 
 public class Rectangle extends Shape {
+    private static Color PLAYING_COLOR;
+
     public Rectangle(Point topLeft, MidiSynth midiSynth) {
         super(topLeft, midiSynth);
+        PLAYING_COLOR = new Color(230, 158, 60);
     }
 
     @Override
@@ -28,5 +31,10 @@ public class Rectangle extends Shape {
     //EFFECTS: fills the shape
     protected void fillGraphics(Graphics g) {
         g.fillRect(x, y, width, height);
+    }
+
+    @Override
+    protected Color getColor() {
+        return PLAYING_COLOR;
     }
 }

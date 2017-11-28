@@ -5,8 +5,11 @@ import sound.MidiSynth;
 import java.awt.*;
 
 public class Oval extends Shape {
+    private static Color PLAYING_COLOR;
+
     public Oval(Point topLeft, MidiSynth midiSynth) {
         super(topLeft, midiSynth);
+        PLAYING_COLOR = new Color(51, 59, 230);
     }
 
     @Override
@@ -46,5 +49,10 @@ public class Oval extends Shape {
     //EFFECTS: fills the shape
     protected void fillGraphics(Graphics g) {
         g.fillOval(x, y, width, height);
+    }
+
+    @Override
+    protected Color getColor() {
+        return PLAYING_COLOR;
     }
 }

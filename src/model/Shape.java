@@ -7,7 +7,7 @@ import java.awt.*;
 
 
 public abstract class Shape {
-    private static Color PLAYING_COLOR;
+    protected Color PLAYING_COLOR;
 
     protected int x;
     protected int y;
@@ -27,7 +27,6 @@ public abstract class Shape {
         this.midiSynth = midiSynth;
         instrument = 0;
         playLineCoord = 0;
-        PLAYING_COLOR = new Color(230, 158, 60);
     }
 
 
@@ -40,6 +39,8 @@ public abstract class Shape {
 
     // getters
     public int getWidth() { return width; }
+
+    protected abstract Color getColor();
 
     // setters
     public void setPlayLineCoord(int playLineCoord) {
@@ -72,7 +73,7 @@ public abstract class Shape {
     public void draw(Graphics g) {
         Color save = g.getColor();
         if (selected) {
-            g.setColor(PLAYING_COLOR);
+            g.setColor(getColor());
         } else {
             g.setColor(Color.white);
         }
@@ -86,7 +87,6 @@ public abstract class Shape {
             g.setColor(save);
         }
     }
-
 
 
     // MODIFIES: this
