@@ -10,6 +10,7 @@ public class Rectangle extends Shape {
     public Rectangle(Point topLeft, MidiSynth midiSynth) {
         super(topLeft, midiSynth);
         PLAYING_COLOR = new Color(230, 158, 60);
+        instrument = 0;
     }
 
     @Override

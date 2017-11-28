@@ -10,6 +10,7 @@ public class Oval extends Shape {
     public Oval(Point topLeft, MidiSynth midiSynth) {
         super(topLeft, midiSynth);
         PLAYING_COLOR = new Color(51, 59, 230);
+        instrument = 41;
     }
 
     @Override

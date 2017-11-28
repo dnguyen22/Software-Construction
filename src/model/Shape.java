@@ -17,7 +17,7 @@ public abstract class Shape {
     private boolean selected;
 
     private MidiSynth midiSynth;
-    private int instrument;
+    protected int instrument;
     private int playLineCoord;
 
 
@@ -25,7 +25,6 @@ public abstract class Shape {
         this((int) topLeft.getX(), (int) topLeft.getY(), 0, 0); //note to students: calls the other constructor!
         selected = false;
         this.midiSynth = midiSynth;
-        instrument = 0;
         playLineCoord = 0;
     }
 
